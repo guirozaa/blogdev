@@ -5,11 +5,10 @@ import jakarta.validation.constraints.NotBlank;
 
 public class NoticiaDTO {
 
-    @NotBlank
     private String nomeNoticia;
-    @NotBlank
+
     private String descNoticia;
-    @NotBlank
+
     private String infoNoticia;
 
     public String getNomeNoticia() {

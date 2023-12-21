@@ -1,37 +1,28 @@
 package com.api.blogdev.models;
-
 import jakarta.persistence.*;
-import org.springframework.cglib.core.Local;
-
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.UUID;
 
 @Entity
 @Table(name = "TB_NOTICIA")
-
 public class Noticia {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID idNoticia;
+    private Long idNoticia;
     @Column(nullable = false, unique = false, length = 30)
     private String nomeNoticia;
     @Column(nullable = false, unique = false)
     private String descNoticia;
-    @Column(nullable = false, unique = false, length = 30)
+    @Column(nullable = true, unique = false, length = 30)
     private String autorNoticia;
-    @Column(nullable = false, unique = false, length = 10)
-    private LocalDateTime dataNoticia;
     @Column(nullable = false)
     private String infoNoticia;
 
 
-    public UUID getIdNoticia() {
+    public Long getIdNoticia() {
         return idNoticia;
     }
 
-    public void setIdNoticia(UUID idNoticia) {
+    public void setIdNoticia(Long idNoticia) {
         this.idNoticia = idNoticia;
     }
 
@@ -57,14 +48,6 @@ public class Noticia {
 
     public void setAutorNoticia(String autorNoticia) {
         this.autorNoticia = autorNoticia;
-    }
-
-    public LocalDateTime getDataNoticia() {
-        return dataNoticia;
-    }
-
-    public void setDataNoticia(LocalDateTime dataNoticia) {
-        this.dataNoticia = dataNoticia;
     }
 
     public String getInfoNoticia() {
